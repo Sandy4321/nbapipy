@@ -1,7 +1,8 @@
+import urllib
 import urllib.parse
 import urllib.request
 from src.settings import BASE_URI
-
+import json
 
 class Client(object):
     def __init__(self, config_obj, **kwargs):
@@ -11,10 +12,10 @@ class Client(object):
             }
 
     def make_request(self, uri_extension, data=None, **kwargs):
-        uri = "{}{}".format(BASE_URI, uri_extension)
+        full_url = uri = "{}{}".format(BASE_URI, uri_extension)
         if data:
             data = urllib.parse.urlencode(data)
-            data = data.encode('utf-8')
-        request = urllib.request.Request(url=uri, data=data, headers=self.headers, method='GET')
+            full_url = full_url + '?' + data
+        request = urllib.request.Request(url=full_url, headers=self.headers, method='GET')
         with urllib.request.urlopen(request) as response:
-            return response.read().decode('utf-8')
+            return json.loads(response.read().decode('utf-8'))
