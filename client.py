@@ -14,7 +14,7 @@ class Client(object):
             }
 
     def make_request(self, uri_extension, data=None, **kwargs):
-        full_url = uri = "{}{}.json".format(BASE_URI, uri_extension)
+        full_url = "{}{}.json".format(BASE_URI, uri_extension)
         if data:
             data = urllib.parse.urlencode(data)
             full_url = full_url + '?' + data
