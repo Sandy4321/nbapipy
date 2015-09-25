@@ -2,10 +2,9 @@ from distutils.core import setup
 
 setup(
     name="nbapipy",
-    version="0.1.1",
+    version="0.1.2",
     author="Raul Gil",
     author_email="gilraul90@gmail.com",
-    include_package_data=True,
     url='http://github.com/rgil90/nbapipy',
     # license="LICENSE.txt",
     description="API wrapper around the erikberg mlb/nba web service",
