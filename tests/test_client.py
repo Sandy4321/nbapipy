@@ -32,3 +32,9 @@ class ClientTestCase(unittest.TestCase):
         self.assertEqual(response['first_name'], 'Raul')
         self.assertEquals(response['last_name'], 'Gil')
 
+    def test_events(self):
+        events = '/events'
+        response = self.client.make_request(events, data={'sport': 'nba', 'date': '20130131'})
+        for event in response['event']:
+            self.assertEquals(event['sport'], 'NBA')
+            self.assertNotEquals(event['sport'], 'MLB')
