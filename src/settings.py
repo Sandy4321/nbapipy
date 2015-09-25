@@ -1,1 +1,0 @@
-BASE_URI = 'https://erikberg.com'

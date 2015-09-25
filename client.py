@@ -1,18 +1,20 @@
 import urllib
 import urllib.parse
 import urllib.request
-from src.settings import BASE_URI
 import json
 
+BASE_URI = 'https://erikberg.com'
+
+
 class Client(object):
-    def __init__(self, config_obj, **kwargs):
+    def __init__(self, access_token, user_agent, **kwargs):
         self.headers = {
-            'User-agent': config_obj.user_agent,
-            'Authorization': "Bearer {}".format(config_obj.access_token)
+            'User-agent': user_agent,
+            'Authorization': "Bearer {}".format(access_token)
             }
 
     def make_request(self, uri_extension, data=None, **kwargs):
-        full_url = uri = "{}{}".format(BASE_URI, uri_extension)
+        full_url = uri = "{}{}.json".format(BASE_URI, uri_extension)
         if data:
             data = urllib.parse.urlencode(data)
             full_url = full_url + '?' + data
