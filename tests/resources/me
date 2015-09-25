@@ -1,0 +1,10 @@
+{
+  "first_name" : "Raul",
+  "last_name" : "Gil",
+  "email_address" : "raul.emmanuel.gil@gmail.com",
+  "created_on" : "2013-04-08",
+  "account_type" : "api",
+  "token_expiration_seconds" : 2494743,
+  "token_expiration_date" : "2015-10-23T21:04:25-04:00",
+  "token_time_remaining" : "28 days, 20 hours, 59 minutes"
+}
