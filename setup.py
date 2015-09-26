@@ -27,6 +27,7 @@ setup(
     author_email="gilraul90@gmail.com",
     url='http://github.com/rgil90/nbapipy',
     # license="LICENSE.txt",
+    summary="API wrapper around the erikberg web service",
     description="API wrapper around the erikberg mlb/nba web service",
     package_dir={'nbapipy': 'nbapipy'},
     include_package_data=True,
