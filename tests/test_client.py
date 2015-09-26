@@ -2,7 +2,7 @@ import os.path
 import unittest
 from urllib.parse import urlparse
 
-from client import Client
+from nbapipy.client import Client
 
 
 def fake_urlopen(url):
@@ -18,7 +18,7 @@ def fake_urlopen(url):
 
 
 class ClientTestCase(unittest.TestCase):
-    """Test case for the client methods."""
+    """Test case for the nbapipy methods."""
 
     def setUp(self):
         self.client = Client(user_agent='raul.emmanuel.gil@gmail.com',
